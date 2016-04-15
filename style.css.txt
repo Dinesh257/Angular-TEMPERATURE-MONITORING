@@ -1,0 +1,16 @@
+
+                    
+/* Styles go here */
+
+
+/*input.ng-valid {
+    background-color:orange;
+}*/
+
+/*input.ng-error {
+    background-color:red;
+}*/
+input.ng-dirty.ng-invalid {
+  background-color: red;}
+
+                

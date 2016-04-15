@@ -1,0 +1,87 @@
+describe("Sample Test Suite", function() {
+
+  it("sample thrutiness test", function() {
+    expect(true).toBeTruthy();
+  });
+
+});
+describe("Test cases for code caluculating the Median", function() {
+
+  it("sample thrutiness test", function() {
+    expect(true).toBeTruthy();
+  });
+
+});
+
+/*Test cases for code caluculating the Median */
+(function(){
+    'use strict';
+    describe("recordTemperature",function(){
+    it("Adding Temperature Sucessfully",function(){
+        var result=recordTemperature(4)
+        expect(result).toEqual([4]);
+    })  
+})
+describe("getCurrentMedian Method",function(){
+    it("Test Passed for Even ",function(){
+        var unittest=[-7, 1, 3, 5, 7, 8];
+        var result=getCurrentMedian(unittest)
+        expect(result).toEqual(4);
+    })
+    
+    it("Test Passed for Odd ",function(){
+        var unittest=[-7, 1, 3, 5, 7, 8, 9];
+        var result=getCurrentMedian(unittest)
+        expect(result).toEqual(5);
+    })
+    
+})
+}());
+
+describe("Test cases for Controller,$scope,Factory", function() {
+
+  it("sample thrutiness test", function() {
+    expect(true).toBeTruthy();
+  });
+
+});
+
+/*Test cases for Controller,$scope,Factory */
+(function(){
+    'use strict';
+
+describe("TemperatureMonitor", function() {
+    var ctrl;
+    var scope;
+    beforeEach(module('app'));
+     beforeEach(inject(function($controller, $rootScope){
+         scope = $rootScope.$new();
+        ctrl = $controller('TemperatureController',{
+             $scope: scope
+             });
+           
+        }));
+        it('contrller Exists', inject(function($controller) {   
+            
+           
+             expect(ctrl).toBeDefined();
+             expect(ctrl).not.toBeNull();
+            expect(typeof ctrl).toBe('object');
+        }));
+        
+        it('scope exists',function() {                  
+         expect(scope.Temperatures).toBeDefined();                  
+        });
+        describe('factory: TemperatureMoniter', function() {
+            var factory = null;
+            beforeEach(inject(function(TemperatureMoniter) {
+              factory = TemperatureMoniter;
+            }))
+            it('Methods are Defined', function() {
+              expect(factory.getCurrentMedian).toBeDefined()
+              expect(factory.getCurrentMedian).toEqual(jasmine.any(Function))
+            });
+          });
+});
+}());
+

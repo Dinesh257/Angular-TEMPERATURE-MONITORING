@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<meta charset="ISO-8859-1">
+  <link data-require="bootstrap-css@*" data-semver="3.2.0" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  
+
+
+</head>
+<body ng-controller="TemperatureController">
+  <h1>Temperature Monitor</h1>
+  <form name="myform">
+    <label for="temperture">Add Temperture:</label>
+    <input type="text" name="temperture" id="temperture" ng-model="newtempeature" ng-pattern="/\b((?:\d{1,3})(?:([,. ']?)\d{3})?(?:\2\d{3})*)(?:(?:|(?!\2))([,./])(\d+))?\b/
+    "  required >
+    <button ng-disabled = "myform.temperture.$invalid" ng-click="recordTemperature()">Add</button>
+    <span ng-cloak ng-show="myform.temperture.$error.pattern"><b>Invalid action Enter Numbers Only.</b></span>
+    
+
+  </form>
+  <hr />
+  <section ng-cloak>
+    <button ng-click="getCurrentMedian()">Get Media Temperture</button>
+    Current Median:<b>{{CurrentMedian}}</b>
+  </section>
+  <hr>
+  <hr>
+  <p>developer name: --Dinesh--</p>
+
+  <hr>
+  <a href="jasmine-test-runner.html">Run Unit Tests</a>
+  <script data-require="angular.js@*" data-semver="1.3.5" src="https://code.angularjs.org/1.3.5/angular.js"></script>
+  <!-- <script data-require="angular.js@*" data-semver="1.3.5" src="https://code.angularjs.org/1.3.5/angular-resource.js"></script> -->
+  <script src="app.js"></script>
+</body>
+
+</html>
